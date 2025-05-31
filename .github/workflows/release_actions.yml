@@ -20,5 +20,4 @@ jobs:
     with:
       runs-on: ubuntu-latest
       environment: devops
-    secrets:
       SEMANTIC_RELEASE_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
