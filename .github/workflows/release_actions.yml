@@ -21,4 +21,4 @@ jobs:
       runs-on: ubuntu-latest
       environment: devops
     secrets:
-      SEMANTIC_RELEASE_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }} # The PAT
+      SEMANTIC_RELEASE_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
