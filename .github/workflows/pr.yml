@@ -1,0 +1,54 @@
+name: Validate PR title
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+    branches:
+      - develop
+
+permissions:
+  contents: read
+
+jobs:
+  semantic-title-check:
+    name: 🚦 Validate Semantic PR Title 🚦
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+      statuses: write
+    steps:
+      - uses: amannn/action-semantic-pull-request@0723387faaf9b38adef4775cd42cfd5155ed6017 # v5.5.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+        with:
+          types: |
+            feat
+            fix
+            docs
+            style
+            refactor
+            test
+            infra
+            chore
+            ci
+            build
+          requireScope: false
+          subjectPattern: ^[A-Z].+$
+          subjectPatternError: |
+            The subject "{subject}" found in the pull request title "{title}"
+            didn't match the configured pattern. Please ensure that the subject
+            starts with an uppercase character.
+          wip: true
+          validateSingleCommit: false
+
+  jira-ticket-check:
+    name: 🔎 Check for JIRA Ticket in Title
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Vonage/action-pr-title@1.0.0
+        with:
+          regex: 'GENOPSX-|GAUT-' # Updated JIRA Project IDs to match
