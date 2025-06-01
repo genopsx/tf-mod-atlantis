@@ -2,6 +2,7 @@ module.exports = {
     extends: ['@commitlint/config-conventional'],
     parserPreset: {
       parserOpts: {
+        // Match: type(scope)?: JIRA-TICKET subject
         headerPattern: /^(\w+)(?:\(([^)]+)\))?!?: (GENOPSX|GAUT)-\d+ (.+)$/,
         headerCorrespondence: ['type', 'scope', 'jira', 'subject'],
       },
@@ -30,9 +31,9 @@ module.exports = {
       'scope-case': [2, 'always', 'lower-case'],
       'subject-empty': [2, 'never'],
   
-      // Turn off subject-case to allow uppercase ticket prefix
+      // ✅ Disable subject-case to allow ticket prefix
       'subject-case': [0],
-      
+  
       'body-leading-blank': [1, 'always'],
       'footer-leading-blank': [1, 'always'],
     },
