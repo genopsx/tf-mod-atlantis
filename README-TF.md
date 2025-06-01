@@ -39,7 +39,7 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_accountable"></a> [accountable](#input\_accountable) | Email of rerson responsible for business and budget of the resource. | `string` | `"leigh.gawne@altium.com"` | no |
+| <a name="input_accountable"></a> [accountable](#input\_accountable) | Email of rerson responsible for business and budget of the resource. | `string` | `"gauthier.kwatatshey@genopsx.com"` | no |
 | <a name="input_alb_subnet_ids"></a> [alb\_subnet\_ids](#input\_alb\_subnet\_ids) | List of subnet IDs to run the ALB in | `list(string)` | n/a | yes |
 | <a name="input_application"></a> [application](#input\_application) | Application is a software program that a user interacts with and performs a<br>wide range of operations. Some functionalities of an application can be<br>delivered as services.  If multiple applications use a resource, then use<br>shared. Other values than listed are allowed. | `string` | n/a | yes |
 | <a name="input_atlantis_default_tf_version"></a> [atlantis\_default\_tf\_version](#input\_atlantis\_default\_tf\_version) | The version of Terraform to use with Atlantis | `string` | n/a | yes |
@@ -48,13 +48,13 @@ No requirements.
 | <a name="input_atlantis_repo_config_json"></a> [atlantis\_repo\_config\_json](#input\_atlantis\_repo\_config\_json) | The configuration to use for the Atlantis server side configuration | `string` | n/a | yes |
 | <a name="input_backup"></a> [backup](#input\_backup) | Whether to enable AWS Backups for this item | `bool` | `false` | no |
 | <a name="input_container_image"></a> [container\_image](#input\_container\_image) | The container image to run | `string` | n/a | yes |
-| <a name="input_department"></a> [department](#input\_department) | Business entity within an organization that owns a resource.<br>Other values than listed are not allowed. | `string` | `"nexar"` | no |
+| <a name="input_department"></a> [department](#input\_department) | Business entity within an organization that owns a resource.<br>Other values than listed are not allowed. | `string` | `"genopsx"` | no |
 | <a name="input_domain"></a> [domain](#input\_domain) | n/a | `string` | n/a | yes |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment name | `string` | n/a | yes |
 | <a name="input_github_org"></a> [github\_org](#input\_github\_org) | n/a | `string` | n/a | yes |
 | <a name="input_github_token_secret_name"></a> [github\_token\_secret\_name](#input\_github\_token\_secret\_name) | n/a | `string` | `"github-personal-access-token"` | no |
 | <a name="input_github_user"></a> [github\_user](#input\_github\_user) | Who does the token belong to? | `string` | n/a | yes |
-| <a name="input_operating_unit"></a> [operating\_unit](#input\_operating\_unit) | Business entity within an organization that owns a resource.<br>Other values than listed are not allowed.<br>Octopart is `search` for the `Search R&D` operating unit.<br>Nexar is `as` for the `Application Services R&D` operating unit. | `string` | n/a | yes |
+| <a name="input_operating_unit"></a> [operating\_unit](#input\_operating\_unit) | Business entity within an organization that owns a resource.<br>Other values than listed are not allowed.<br>Octopart is `search` for the `Search R&D` operating unit.<br>Genopsx is `as` for the `Application Services R&D` operating unit. | `string` | n/a | yes |
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | Custom application name prefix | `string` | `null` | no |
 | <a name="input_prefix_list_id_devops"></a> [prefix\_list\_id\_devops](#input\_prefix\_list\_id\_devops) | ID of the prefix list to allow to access the service from the DevOps team | `string` | n/a | yes |
 | <a name="input_prefix_list_id_github"></a> [prefix\_list\_id\_github](#input\_prefix\_list\_id\_github) | ID of the prefix list to allow to access the service from GitHub | `string` | n/a | yes |

@@ -42,18 +42,18 @@ variable "department" {
     Other values than listed are not allowed.
   EOT
   type        = string
-  default     = "nexar"
+  default     = "genopsx"
 
   validation {
-    condition     = contains(["a365", "dss", "cad", "nexar", "it"], var.department)
-    error_message = "Allowed values: `a365`, `dss`, `cad`, `nexar`, `it`."
+    condition     = contains(["a365", "dss", "cad", "genopsx", "it"], var.department)
+    error_message = "Allowed values: `a365`, `dss`, `cad`, `genopsx`, `it`."
   }
 }
 
 variable "accountable" {
   description = "Email of rerson responsible for business and budget of the resource."
   type        = string
-  default     = "leigh.gawne@altium.com"
+  default     = "gauthier.kwatatshey@genopsx.com"
 
   validation {
     condition     = can(regex("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", var.accountable))
@@ -66,7 +66,7 @@ variable "operating_unit" {
     Business entity within an organization that owns a resource.
     Other values than listed are not allowed.
     Octopart is `search` for the `Search R&D` operating unit.
-    Nexar is `as` for the `Application Services R&D` operating unit.
+    Genopsx is `as` for the `Application Services R&D` operating unit.
   EOT
   type        = string
 

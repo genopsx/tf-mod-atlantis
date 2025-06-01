@@ -7,7 +7,7 @@ Please see the `examples/` directory for deployment information.
 [label-mod.tf](./label-mod.tf) for label module declaration and variables.
 [outputs.tf](./outputs.tf) for full list of output variables and descriptions.
 
-The Nexar DevOps team welcome PRs for this repo;
+The GenOpsX DevOps team welcome PRs for this repo;
 - Using a Jira ticket number as the branch name, e.g:
     - `git checkout -b JIRA-213`
 - Using semantic commit messages, incorporating the jira ticket, e.g:
