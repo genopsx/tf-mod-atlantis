@@ -1,23 +1,11 @@
-name: Commit-lint
+name: Call Commit Lint
 
 on:
   push:
   pull_request:
 
 jobs:
-  commit-lint:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-
-    - name: Install dependencies
-      run: |
-        npm install --save-dev @commitlint/cli @commitlint/config-conventional
-        npm install --save-dev conventional-changelog-conventionalcommits
-
-    - name: Run Commitlint
-      run: npx commitlint --from=HEAD --to=HEAD
+  lint-commits:
+    uses: genopsx/devops-github-actions-workflows/.github/workflows/commit-lint.yml@main
+    with:
+      runs-on: ubuntu-latest
