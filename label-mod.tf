@@ -1,5 +1,5 @@
 ### This file is synced from the devops-github-sync repository.
-### Changes should be made there and synced across.
+### Changes should be made there and synced across
 
 module "label" {
   # tflint-ignore: terraform_module_pinned_source
