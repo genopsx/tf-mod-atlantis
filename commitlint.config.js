@@ -1,30 +1,40 @@
 module.exports = {
     extends: ['@commitlint/config-conventional'],
-    parserPreset: 'conventional-changelog-conventionalcommits',
+    parserPreset: {
+      parserOpts: {
+        headerPattern: /^(\w+)(?:\(([^)]+)\))?!?: (GENOPSX|GAUT)-\d+ (.+)$/,
+        headerCorrespondence: ['type', 'scope', 'jira', 'subject'],
+      },
+    },
     formatter: '@commitlint/format',
     rules: {
-        'type-enum': [
-            2,
-            'always',
-            [
-                'build',
-                'chore',
-                'ci',
-                'docs',
-                'feat',
-                'fix',
-                'perf',
-                'refactor',
-                'revert',
-                'style',
-                'test',
-            ],
+      'type-enum': [
+        2,
+        'always',
+        [
+          'build',
+          'chore',
+          'ci',
+          'docs',
+          'feat',
+          'fix',
+          'perf',
+          'refactor',
+          'revert',
+          'style',
+          'test',
         ],
-        'type-case': [2, 'always', 'lower-case'],
-        'type-empty': [2, 'never'],
-        'subject-case': [2, 'always', 'sentence-case'],
-        'subject-empty': [2, 'never'],
-        'body-leading-blank': [1, 'always'],
-        'footer-leading-blank': [1, 'always'],
+      ],
+      'type-case': [2, 'always', 'lower-case'],
+      'type-empty': [2, 'never'],
+      'scope-case': [2, 'always', 'lower-case'],
+      'subject-empty': [2, 'never'],
+  
+      // Turn off subject-case to allow uppercase ticket prefix
+      'subject-case': [0],
+      
+      'body-leading-blank': [1, 'always'],
+      'footer-leading-blank': [1, 'always'],
     },
   };
+  
